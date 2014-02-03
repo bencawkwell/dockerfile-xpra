@@ -27,4 +27,4 @@ If you return to the first terminal and hit any key then xterm will launch on th
 Todo
 ----
 
-* Poll supervisorctl and make sure sshd and xpra are running before prompting the user.
+* The line that prints start.sh is too long, it would be good to extract common functionality into separate utilities that can be fetched from gitub. I do not include it as a separate file since I want the Dockerfile to be as self contained as possible.
