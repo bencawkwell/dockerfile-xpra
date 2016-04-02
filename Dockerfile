@@ -2,7 +2,6 @@ FROM ubuntu:precise
 MAINTAINER Ben Cawkwell <bencawkwell@gmail.com>
 
 # Update the system
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get upgrade -y
 
