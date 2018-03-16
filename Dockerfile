@@ -1,9 +1,9 @@
-FROM ubuntu:precise
-MAINTAINER Ben Cawkwell <bencawkwell@gmail.com>
+FROM ubuntu:16.04
+MAINTAINER Ali Sadat <sadatakhavi.ali@gmail.com>
 
 # Update the system
 RUN apt-get update
-RUN apt-get upgrade -y
+#RUN apt-get upgrade -y
 
 # Install supervisord.
 RUN apt-get install -y supervisor
@@ -14,9 +14,15 @@ RUN mkdir /var/run/sshd
 RUN echo 'root:changeme' |chpasswd
 RUN /bin/echo -e "[program:sshd] \ncommand=/usr/sbin/sshd -D \n" > /etc/supervisor/conf.d/sshd.conf
 
+#RUN apt-get install -y apt-utils
+
 # Install Xpra
-RUN wget -qO - http://winswitch.org/gpg.asc | apt-key add -
-RUN echo "deb http://winswitch.org/ precise main" > /etc/apt/sources.list.d/winswitch.list
+#RUN apt-get install -y curl
+#RUN curl https://winswitch.org/gpg.asc | apt-key add -
+#RUN wget -qO - http://winswitch.org/gpg.asc | apt-key add -
+#RUN echo "deb http://winswitch.org/ xenial main" > /etc/apt/sources.list.d/winswitch.list
+#RUN apt-get install -y software-properties-common >& /dev/null
+#RUN add-apt-repository universe >& /dev/null
 RUN apt-get update
 RUN apt-get install -y xpra xserver-xorg-video-dummy
 RUN useradd -m xpra
