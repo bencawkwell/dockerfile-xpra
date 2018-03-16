@@ -26,7 +26,7 @@ RUN /bin/echo -e "[program:sshd] \ncommand=/usr/sbin/sshd -D \n" > /etc/supervis
 RUN apt-get update
 RUN apt-get install -y xpra xserver-xorg-video-dummy
 RUN useradd -m xpra
-RUN echo 'xpra:changeme' |chpasswd
+RUN echo 'xpra:xpra' |chpasswd
 RUN chsh -s /bin/bash xpra
 ADD http://xpra.org/xorg.conf /home/xpra/xorg.conf
 RUN /bin/echo -e "export DISPLAY=:100" > /home/xpra/.profile && chown xpra:xpra /home/xpra/xorg.conf
