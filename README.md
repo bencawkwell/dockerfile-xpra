@@ -24,6 +24,21 @@ In a separate terminal connect to xpra running in the container. The password is
 
 If you return to the first terminal and hit any key then glxgears will launch on the host. If you already hit any key then glxgears will open on the host as soon as you attached to xpra. I only added the extra need to press a key before launching glxgears because I intend to use this example to run applications that may contain intros (eg. Dwarf Fortress).
 
+Host device kernel version and xpra version:
+   root@pc:/home/administrator/programming/dockerfile-xpra# lsb_release -a
+	No LSB modules are available.
+	Distributor ID:	Ubuntu
+	Description:	Ubuntu 16.04.4 LTS
+	Release:	16.04
+	Codename:	xenial
+
+   root@pc:/home/administrator/programming/dockerfile-xpra# xpra version
+
+	Warning: running as root
+	Warning: the python netifaces package is missing
+	2.2.5-r18663
+
+
 Todo
 ----
 
